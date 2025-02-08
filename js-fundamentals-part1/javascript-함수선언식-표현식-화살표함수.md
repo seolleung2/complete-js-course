@@ -38,7 +38,7 @@ console.log(multiply(2, 3)); // 6 출력
 
 ## 3. 화살표 함수 (Arrow Function)
 
-더 짧게 쓸 수 있는 최신 함수 작성 방법입니다.
+더 짧게 쓸 수 있는 최신 (ES6) 함수 작성 방법입니다.
 
 ```javascript
 const add = (a, b) => a + b;
@@ -115,8 +115,3 @@ const Icon = ({ name, size }) => (
   <span className={`icon-${name} size-${size}`} />
 );
 ```
-
-리액트 컴포넌트는 두 방식 모두 자주 사용되며 :
-
-- 함수 선언식: 큰 컴포넌트나 로직이 많은 경우
-- 화살표 함수: 작고 단순한 컴포넌트의 경우
