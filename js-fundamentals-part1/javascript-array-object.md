@@ -77,26 +77,51 @@ const person = {
 console.log(person.name); // "김코딩"
 ```
 
-- ✅ **사용하는 경우**: 일반적인 속성 이름일 때
-- 🚫 **사용할 수 없는 경우**: 특수문자, 공백, 숫자로 시작하는 속성
+- ✅ **사용할 수 있는 경우**:
+  - 유효한 JavaScript 식별자인 속성 이름
+  - 문자로 시작하고
+  - 문자, 숫자, `_`, `$`만 포함
 
 #### 2. 대괄호 표기법 (Bracket Notation)
 
 ```javascript
 const user = {
+  // 특수문자를 포함한 속성 이름
   "user-id": "abc123",
+  // 공백을 포함한 속성 이름
   "favorite color": "blue",
-  "1st": "first",
+  // 숫자로 시작하는 속성 이름
+  123: "number key",
+  // 일반적인 속성 이름 (이것도 대괄호로 접근 가능)
+  name: "Kim",
 };
 
+// 특수문자가 있는 경우
 console.log(user["user-id"]); // "abc123"
-console.log(user["favorite color"]); // "blue"
-console.log(user["1st"]); // "first"
 
-// 변수로 속성에 접근할 때도 사용
-const propertyName = "user-id";
-console.log(user[propertyName]); // "abc123"
+// 공백이 있는 경우
+console.log(user["favorite color"]); // "blue"
+
+// 숫자로 시작하는 경우
+console.log(user["123"]); // "number key"
+
+// 변수를 사용하여 접근할 때
+const propertyName = "name";
+console.log(user[propertyName]); // "Kim"
+
+// ❌ 점 표기법으로는 접근 불가능
+// console.log(user.user-id); // 에러: undefined - id
+// console.log(user.favorite color); // 문법 에러
+// console.log(user.123); // 문법 에러
 ```
+
+#### 속성 이름 규칙 정리 📝
+
+1. **모든 문자열**은 속성 이름으로 사용 가능
+2. **점 표기법**은 유효한 식별자인 경우만 사용 가능
+3. **대괄호 표기법**은 모든 경우에 사용 가능
+4. 가능하면 **점 표기법**을 사용하는 것이 가독성에 좋음
+5. 특수한 경우에만 **대괄호 표기법** 사용 권장
 
 ### this 키워드 이해하기 🎯
 
@@ -170,7 +195,7 @@ console.log(calculator.multiply(4, 2)); // 8
    - ⚠️ `this` 바인딩이 다르게 동작
    - 객체의 메서드로는 권장하지 않음
 
-### 화살표 함수와 this 이해하기 쉽게 설명 🎯
+### 화살표 함수와 this 이해하기 쉽게 설명하기 🎯
 
 #### 일반 함수의 this
 
