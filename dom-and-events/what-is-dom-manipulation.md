@@ -155,6 +155,8 @@ element.style.propertyName; // CSS 속성 직접 조작
 
 ## Guess My Number 게임 구현
 
+image.png
+
 ### 게임 로직
 
 1. 1부터 20 사이의 랜덤 숫자 생성
